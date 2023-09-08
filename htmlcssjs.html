@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>to do list</title>
+    <style>
+	ul {
+    		list-style: none;
+	}
+
+
+	li {
+    		font-size: 16px;
+    		padding: 5px;
+	}
+
+
+	li:nth-child(odd) {
+    		background-color: #f9f9f9;
+	}
+
+
+	li:nth-child(even) {
+    		background-color: #eee;
+	}
+
+   </style>
+  </head>
+  <body>
+    <h2>My To-Do List</h2>
+	<input type="text" id="taskInput" placeholder="Enter a task...">
+    	<button onclick="addListItem()">Add</button>
+        <ul  id="myList">
+        <li>Task 1: Complete homework</li>
+        <li>Task 2: Buy groceries</li>
+        <li>Task 3: Go to the gym</li>
+        <li>Task 4: Call mom</li>
+    </ul>
+
+    <script>
+	function addListItem() {
+    		var li = document.createElement("li");
+    		var inputValue = document.getElementById("taskInput").value;
+    		var t = document.createTextNode(inputValue);
+    		li.appendChild(t);
+    		if (inputValue === '') {
+        		alert("You must write something!");
+    		} else {
+        		document.getElementById("myList").appendChild(li);
+    		}
+    		document.getElementById("taskInput").value = "";
+	}
+    </script>
+  </body>
+</html>
